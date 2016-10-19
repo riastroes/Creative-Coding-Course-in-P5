@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Creative Coding: Lesson 2</title>
+    <META NAME="COPYRIGHT" CONTENT="&copy; Ria Stroes">
+    <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/addons/p5.dom.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/addons/p5.sound.min.js" type="text/javascript"></script>
+    <script src="../mylib/Google.js" type="text/javascript"></script>
+    <script src="ebook.js" type="text/javascript"></script>
+    <script src="Layout.js" type="text/javascript"></script>
+    <script src="Section.js" type="text/javascript"></script>
+
+    <script src="Layout.js" type="text/javascript"></script>
+    <script src="Section.js" type="text/javascript"></script>
+    <script src="Lesson2.js" type="text/javascript"></script>
+
+    <style>
+
+    body {padding: 0; margin: 0;}
+    canvas {vertical-align: top;}
+
+      .bglesson{
+        background:rgb(200,200,200);
+      }
+      .lesson{
+        font-family: 'PhoenixScriptFLF',serif;
+        font-size: 120px;
+        color:rgb(255,255,255);
+      }
+      .subject{
+        font-family: Arial,sans-serif;
+        font-weight:bolder;
+        font-size:120px;
+        text-align:right;
+        color:#0066ff; /*blue*/
+      }
+      .bgnr{
+        background:#0066ff; /*blue*/
+      }
+      .nr{
+        font-family: arial,sans-serif;
+        font-weight:bolder;
+        font-size:400px;
+        text-align:right;
+        color:rgb(255,255,255);
+      }
+      .lnr{
+        font-family: arial,sans-serif;
+        font-weight:bolder;
+        font-size:400px;
+        text-align:right;
+        color:rgb(200,200,200);
+      }
+      .bgcontent{
+        background:rgb(200,200,200);
+        padding:20px;
+      }
+      .content{
+        font-family: arial,sans-serif;
+        font-size:14px;
+        color: white;
+      }
+      ul{
+        position:relative;
+        left:-30px;
+        top:-20px;
+        color:#0066ff;
+      }
+      .title{
+        font-family: arial,sans-serif;
+        font-weight:bolder;
+        font-size:140px;
+        color:#0066ff;
+      }
+      .title2{
+        font-family: 'PhoenixScriptFLF',serif;
+        font-weight:bolder;
+        font-size:100px;
+        color:#0066ff;
+      }
+      .how{
+        font-family: arial,sans-serif;
+        background:rgb(200,200,200);
+        padding:20px;
+        font-size:18px;
+        color: white;
+      }
+      .canvastitle{
+        font-family: arial,sans-serif;
+        font-weight:bolder;
+        font-size:140px;
+        color:#0066ff;
+        text-align:right;
+      }
+      .bgcanvas{
+        background:white;
+      }
+      .bgcode{
+        background:white;
+
+
+      }
+      canvas{
+        border-right: solid 10px #0066ff;
+      }
+      .info{
+        font-family: arial,sans-serif;
+        font-weight:bolder;
+        font-size:14px;
+        padding-left:20px;
+        background:rgb(200,200,200);
+        color:#0066ff;
+      }
+      .link{
+        font-family: arial,sans-serif;
+        font-weight:bolder;
+        font-size:14px;
+        text-align:right;
+        padding-right:20px;
+        background:rgb(200,200,200);
+        color:#0066ff;
+      }
+
+    </style>
+  </head>
+  <body>
+    <p id="divimg">
+      <img src="resources/grayscale.png" alt="grayscale" width="500px" />
+    </p>
+    <p id="content1">In javascript we can represent the colors black, all grays and white by a number between 0 and 255.
+      the background function can use these colors.
+    </p>
+      <ul id="content2">
+        <li>black and white</li>
+        <li>gray</li>
+        <li>background</li>
+        <li>frameRate</li>
+        <li>random</li>
+        <li>comments</li>
+  </ul>
+    </p>
+    <p id="how1">
+      You can change the background of the canvas with the background function.<br/>
+      The background function needs a color as param. Now we only will use
+      the colors black grays and white.<br/>
+      The value 0 is black <br/>
+      The value 255 is white <br/>
+      And all the values between 0 and 255 will change your background in a gray color
+      from dark gray to light gray.
+    </p>
+    <pre id="how2">
+      background(200);
+    </pre>
+    <p id="how3">
+        You can use this function in the setup or in the draw function.
+        If you use it in the setup function it will be set ones, if you use this function in
+        draw function it will be called in every loop, max 60 time a second, then it will be set on
+        top of every thing you have drawn in the previous loops.<br/><br/>
+        60 times a second is very fast, you can slowdown your drawing by setting the frameRate.
+        A propper value for the frameRate is between 0 and 60. If you don't set the frameRate your
+        drawing will be as fast as the computer can execute all the instructions inside the drawing function.
+
+    </p>
+
+
+    <pre id="code1">
+  function setup(){
+    createCanvas(300,300);
+
+    //slow down to 5 frames a second.
+    frameRate(5);
+  }
+  function draw(){
+    background(random(255));
+  }
+    </pre>
+    <p id="how5">The random function will pick a number between 0 and max, or between a minimum and a maximum.
+    </p>
+    <pre id ="how6">
+      random(255) // is a random number between 0 and 255.
+      random(200,255) // is a random number between 200 and 255.
+    </pre>
+    <p id="how7">
+      In the setup code of the example you can see I used a comment line. A comment line begins with // every thing behind the two slashes, the computer will ignore.
+      It is important to comment your code. So when you read your code a month later you will understand what you were trying to do.
+      Also whitespace will make your code easer to read.<br/><br/>
+
+      You can open this example in openprocessing by clicking the link at the bottom of the page.<br/>
+      In openprocessing you can "FORK" a sketch, that is copy a sketch, change it and save it as your own.
+    </p>
+
+      <ol id="assignment1">
+      <li>You can't draw anything yet, but try to create a canvas 500 pixels width and 700 pixels height,
+      with a light gray background. You can use this background in the next lesson.</li>
+      <li>Find a nice sketch on openprocessing, "fork" the sketch and change the background.<br/>
+      Try it in the setup function and in the draw function and look what happens.</li>
+    </ol>
+
+    <p id ="info1">copyright Ria Stroes  &copy; 2016, www.riastroes.nl</p>
+    <p id ="link1"><a href="https://www.openprocessing.org/sketch/386466">open this sketch on openprocessing</a></p>
+  </body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Creative Coding: Lesson 1</title>
+    <META NAME="COPYRIGHT" CONTENT="&copy; Ria Stroes">
+    <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/addons/p5.dom.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/addons/p5.sound.min.js" type="text/javascript"></script>
+    <script src="../mylib/Google.js" type="text/javascript"></script>
+    <script src="ebook.js" type="text/javascript"></script>
+    <script src="Layout.js" type="text/javascript"></script>
+    <script src="Section.js" type="text/javascript"></script>
+
+    <script src="Layout.js" type="text/javascript"></script>
+    <script src="Section.js" type="text/javascript"></script>
+    <script src="Lesson1.js" type="text/javascript"></script>
+
+    <style>
+
+    body {padding: 0; margin: 0;}
+    canvas {vertical-align: top;}
+
+      .bglesson{
+        background:rgb(200,200,200);
+      }
+      .lesson{
+        font-family: 'PhoenixScriptFLF',serif;
+        font-size: 120px;
+        color:rgb(255,255,255);
+      }
+      .subject{
+        font-family: Arial,sans-serif;
+        font-weight:bolder;
+        font-size:120px;
+        text-align:right;
+        color:#0066ff; /*blue*/
+      }
+      .bgnr{
+        background:#0066ff; /*blue*/
+      }
+      .nr{
+        font-family: arial,sans-serif;
+        font-weight:bolder;
+        font-size:400px;
+        text-align:right;
+        color:rgb(255,255,255);
+      }
+      .lnr{
+        font-family: arial,sans-serif;
+        font-weight:bolder;
+        font-size:400px;
+        text-align:right;
+        color:rgb(200,200,200);
+      }
+      .bgcontent{
+        background:rgb(200,200,200);
+        padding:20px;
+      }
+      .content{
+        font-family: arial,sans-serif;
+        font-size:14px;
+        color: white;
+      }
+      h2{
+        text-align:right;
+        color:#0066ff;
+        padding-right:20px;
+      }
+      ul{
+        position:relative;
+        left:-30px;
+        top:-20px;
+        color:#0066ff;
+      }
+      .title{
+        font-family: arial,sans-serif;
+        font-weight:bolder;
+        font-size:140px;
+        color:#0066ff;
+      }
+      .title2{
+        font-family: 'PhoenixScriptFLF',serif;
+        font-weight:bolder;
+        font-size:100px;
+        color:#0066ff;
+      }
+      .how{
+        font-family: arial,sans-serif;
+        background:rgb(200,200,200);
+        padding:20px;
+        font-size:18px;
+        color: white;
+
+      }
+      .divimg{
+
+      }
+      .canvastitle{
+        font-family: arial,sans-serif;
+        font-weight:bolder;
+        font-size:140px;
+        color:#0066ff;
+        text-align:right;
+      }
+      .bgcanvas{
+        background:white;
+      }
+      .bgcode{
+        background:white;
+
+
+      }
+
+      .info{
+        font-family: arial,sans-serif;
+        font-weight:bolder;
+        font-size:14px;
+        padding-left:20px;
+        background:rgb(200,200,200);
+        color:#0066ff;
+      }
+      .link{
+        font-family: arial,sans-serif;
+        font-weight:bolder;
+        font-size:14px;
+        text-align:right;
+        padding-right:20px;
+        background:rgb(200,200,200);
+        color:#0066ff;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <p id="intro1">
+      Do you like to learn programming and have fun?<br/>
+      Are you a creative person, a designer or an artist or just a beginner?<br/>
+      Then hang on! <br/>
+      In this creative coding course you will learn programming in javascript and be creative with the skills you have learned.<br/>
+    </p>
+    <h1 id="intro2">Creative Coding Course</h1>
+    <h2 id="intro3">for beginners</h2>
+    <ul id="intro4"><li>javascript</li>
+    <li>library</li>
+  <li>createCanvas</li>
+<li>windowWidth</li>
+<li>windowHeight</li>
+<li>openprocessing</li>
+<li>camelcase</li></ul>
+    <p id="intro5">
+      What is javascript?<br/>
+      JavaScript is the programming language of the Web.<br/>
+      Programming makes computers do what you want them to do.<br/>
+      JavaScript is easy to learn.</br>
+    </p>
+    <p id="intro6">
+      What is a library?<br/>
+      A library is a set of function developed for other programmers / users to make programming more simple.</br>
+    </p>
+    <p id="intro7">
+      What is P5?<br/>
+      P5 is a javascript library developed for designers, artists, education and beginners</p>
+
+    <p id="how1">
+      You can start with P5 on <a href="www.openprocessing.com">www.openprocessing.com</a> Here you can find an online editor where you can program and use the P5 library.
+      You don't need to install anything. You only have to create an account and you can use the online editor for free.
+      You can find all the examples from this course on this site.
+      Or you can download the P5 editor from the <a href="P5js.org">P5js.org</a> site.
+      When you install a local editor is easer to create you own library, but that's for later. First start coding ...
+    </p>
+    <h1 id="how2">
+      Getting Started ...
+    </h1>
+    <p id="how3">
+        When you start in openprocessing, check the settings. You need to start in P5.
+        Show the console. It will give you error information.
+      </p>
+    <p id ="howimg">
+      <img  src="resources/openprocessing settings.jpg" alt="openprocessing settings" />
+    </p>
+    <p id="how4">Every P5 sketch will start with two function:
+    </p>
+
+        <pre id="how5">
+          function setup(){
+             instruction 1;
+             instruction 2;
+             instruction 3;
+             etc.
+          }
+        </pre>
+        <p id="how6">In the setup function, between the curly brackets you can write instruction for the computer.
+           These instructions will be executed from top to bottom. Every instruction has to end with a semicolumn.
+           When the webpage is loaded, P5 will call the setup function to execute.
+           After the computer has executed the setup function it will call the draw function. The draw function will
+           be executed <strong> 60 times a second </strong>. In the draw function you write your drawing instructions for <thead>
+           computer.
+           </thead>
+        </p>
+        <pre id="how7">
+          function draw(){
+             instruction 1;
+             instruction 2;
+             instruction 3;
+             etc.
+             start again with instruction 1;
+          }
+        </pre>
+        <p id="how8">
+          In the setup function you have to prepare your canvas. In the example above is a canvas created:
+        </p>
+          <pre id="how9">
+        createCavas(windowWidth, windowHeight);
+          </pre>
+          <p id="how10">
+           createCanvas is a function that needs two params in wich you specify the width and the height of the canvas.<br/>
+
+           windowWidth is a variable of P5 that stores the width of your screen in pixels.<br/>
+           windowHeight is a variable of P5 that stores the height of your screen in pixels.<br/>
+           <br/>
+           You can make a smaller or bigger canvas by changing the params<br/>
+         </p>
+         <pre id="how11">
+        createCanvas(500, 400);
+         </pre>
+          <p  id="how12">
+           Now the width is 500 pixels and the height is 400 pixels.<br/>
+           Can you see the difference between a function and a variable? <br/>
+           A functions always has brackets (), even if the function does not need any params.
+           Notice that functionsnames and variablesnames both are written in 'camelcase':<br/><br/>
+         </p>
+          <ul id="how13">
+           <li>the first word in the name is always starting with a small character.</li>
+           <li>the next words in the name are always starting with a capital.</li>
+           <li>the words are written together, without spacing or underscores.</li>
+         </ul>
+         <p  id="how14">In the next lessons you will learn more about functions and variables in P5 and create your own!</p>
+         <p id="assignment1">
+           Every lesson will end in one or more assigments, I encourage you to work on these assignments and not only copy the examples of others.<br/>
+           Be as creative as you can and explore different possibilities. That's how you strengthen your skills.<br/>
+           After this first lesson you only can create an account on openprocessing. Look what other people are making with this tool and try to run the
+           first sketch, that openprocessing is providing. Don't forget to check the settings.
+        </p>
+
+
+        <p id ="info1">copyright Ria Stroes  &copy; 2016, www.riastroes.nl</p>
+        <p id ="link1"><a href="https://www.openprocessing.org/sketch/386288">open sketch on openprocessing</a></p>
+      </body>
+</html>
