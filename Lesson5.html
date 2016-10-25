@@ -2,17 +2,19 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Creative Coding: Lesson 3</title>
+    <title>Creative Coding: Lesson 4</title>
     <META NAME="COPYRIGHT" CONTENT="&copy; Ria Stroes">
     <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/addons/p5.dom.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/addons/p5.sound.min.js" type="text/javascript"></script>
     <script src="../mylib/Google.js" type="text/javascript"></script>
+    <script src="ebook.js" type="text/javascript"></script>
+    <script src="Layout.js" type="text/javascript"></script>
 
     <script src="Layout.js" type="text/javascript"></script>
     <script src="Section.js" type="text/javascript"></script>
-    <script src="Lesson3.js" type="text/javascript"></script>
+    <script src="Lesson4.js" type="text/javascript"></script>
 
     <style>
 
@@ -57,7 +59,7 @@
       }
       .content{
         font-family: arial,sans-serif;
-        font-size:14px;
+        font-size:18px;
         color: white;
       }
       ul{
@@ -67,7 +69,7 @@
         color:#0066ff;
       }
       ul.white{
-        position:relative;
+        left:0px;
         color:#ffffff;
       }
       .title{
@@ -101,19 +103,9 @@
       }
       .bgcode{
         background:white;
-
-
       }
       canvas{
         border-right: solid 10px #0066ff;
-      }
-      .info{
-        font-family: arial,sans-serif;
-        font-weight:bolder;
-        font-size:14px;
-        padding-left:20px;
-        background:rgb(200,200,200);
-        color:#0066ff;
       }
       .question{
         font-family: arial,sans-serif;
@@ -123,6 +115,14 @@
         background:rgb(200,200,200);
         color:#0066ff;
         text-align:center;
+      }
+      .info{
+        font-family: arial,sans-serif;
+        font-weight:bolder;
+        font-size:14px;
+        padding-left:20px;
+        background:rgb(200,200,200);
+        color:#0066ff;
       }
       .link{
         font-family: arial,sans-serif;
@@ -137,96 +137,105 @@
     </style>
   </head>
   <body>
-    <p id="intro">
 
-        Dots, Dots, Dots and Dots ...<br/><br/>
-        Artist YAYOI KUSAMA is obsessed by the dot, but she created art out of her obsession.
-      <br/><br/>
-      <img id="imgdots" src="resources/dots.jpg" alt="dots"/>
-    </p>
-    <ul id="content2">
-      <li>black and white</li>
-      <li>gray</li>
-      <li>background</li>
-      <li>frameRate</li>
-      <li>random</li>
-      <li>comments</li>
+
+    <p id="intro1">A variable is like a 'box' where you can store a value.<br/>
+    If you create a variable in a function, the variable is only known in this specific function.<br/>
+    Often we need to give a variable a value before we start a function.<br/>
+    In this case we declare the variable outside the function, before the setup function. <br/>
+  </p>
+  <pre id="intro5" >
+    var x;          //declaration of the variable x;
+    function setup(){
+      createCanvas(400,400);
+      x = 0;        //x needs a value before you can call it in the draw function.
+    }
+    function draw(){
+      line(x, 200, 400, 200);
+      x += 2;       //add two more in your 'box'
+    }
+  </pre>
+
+
+
+    <ul id="content2" >
+      <li>variable</li>
+      <li>p5 Reference</li>
     </ul>
-
     <p id="how1">
-      You can create a dot with the point function.
+      You can create a straight with the line function.<br/>
+      You always need two points to create a line.<br/>
     </p>
     <pre id="how2">
-      point(x, y);
+      line(x, y, x1, y1);
     </pre>
     <p id="how3">
-        The point function has two params:
+        The line function has four params:
     </p>
-    <ul id="how4"  class="white">
-      <li>the x-position; how far in pixels from the left border?</li>
-      <li>the y-position; how far in pixels from the top?</li>
+    <ul id="how4" class="white">
+      <li>the first two params are the begin-position (x,y) of the line</li>
+      <li>the third and the fourth params are the end-position(x1,y1) position of the line.</li>
     </ul>
     <p id="how5">
       the params (x,y) mark the center of the point.
-      But before you can draw a dot you have to get your tools ready.
+      The line need the same drawing tools as the point.
       You need a stroke function, so your drawingtool knows which color to use.
       You need a strokeWeight function, to tell your drawingtool how big your dot should be.<br/><br/>
-      Remember: position (0,0) is in the top-left-corner.
-    </p>
+      The beginning and the end of the line can be set outside the canvas.
 
     <pre id="code1">
   function setup(){
     createCanvas(300,300);
+    background(100);
   }
 
   function draw(){
-    stroke(100);
-    strokeWeight(130);
-    point(75, 100);
+    stroke(240);
+    strokeWeight(30);
+    line(85, 130, 200,155);
 
-    stroke(100);
-    strokeWeight(300);
-    point(100, 300);
+    stroke(160);
+    strokeWeight(20);
+    line(50, 230, 200,-10);
 
-    stroke(100);
-    strokeWeight(130);
-    point(225, 100);
-
-    stroke(100);
-    strokeWeight(300);
-    point(200, 300);
-
-  //three dots
+    stroke(80);
+    strokeWeight(10);
+    line(40, 250, 240,160);
 
     stroke(0);
-    strokeWeight(20);
-    point(100, 100);
-
-    stroke(100);
-    strokeWeight(20);
-    point(150, 100);
-
-    stroke(200);
-    strokeWeight(20);
-    point(200, 100);
+    strokeWeight(1);
+    line(5, 290, 180,200);
+    line(180,200, 100,20);
+    line(100,20,5,290);
   }
     </pre>
-    <p id ="link1"><a href="https://www.openprocessing.org/sketch/386253">open sketch on openprocessing</a></p>
+    <p id ="link1"><a href="https://www.openprocessing.org/sketch/386647">open sketch on openprocessing</a></p>
+    <h3 id="assignment1">1. P5 Reference</h3>
+          <ul id ="assinfo1" class="white">
+          <li>Go to the reference op P5 at <a href="http://p5js.org/reference">p5js.org/reference</a></li>
+          <li>Search for the line method</li>
+          <li>You can find every function or method back in the Reference.</li>
+          <li>In openprocessing go to the menu on the right side of your screen. Next to the
+            tab Setting you find two more tabs Files and Reference. Click on the Reference tab and click on a functionname in the list.
+            You will find the P5 reference page about this function.</li>
+        </ul>
+      <h3 id="assignment2">2. One_Line_Drawing</h3>
+      <ul id ="assinfo2" class="white">
+        <li>create a canvas as wide as your window and 400 pixels height.</li>
 
-    <h3 id="assignment1">1. A Night Scene</h3>
-
-      <ul id ="assinfo1" class="white">
-        <li>Use the canvas you created in lesson 2 with 700 pixels width and 500 pixels height.</li>
-
-        <li>First make a sketch on graph paper. This is so important for all your designs. It will save you a lot of time.</li>
+        <li>First make a sketch on graph paper. It will save you a lot of time.</li>
         <li>create a sketch in the same size, where 50 pixels is 1 cm.</li>
-        <li>Mark the centers of the circles in your sketch.</li>
-        <li>You can use circles and black, different grays and white in your sketch.</li>
-        <li>After you have finished your sketch on paper, remake it in P5.</li>
-        <li>Save your sketch and give it two tags: ccc, lesson3</li>
+        <li>Use a variable x for the begin points and end points of you lines.<br/><br/>
+        <ul class="white"><li>line(x + 0, 300, x + 50, 300);</li>
+        <li>line(x + 50, 300, x + 150, 100);</li>
+        <li>etc.</li></ul></li>
+          <li>After you have declared your x variable outside all the functions,
+          you can start with x = -width in the setup function;
+        <li>Now the line can move to the right, if we add a speed value to the x. </li>
+        <li>Save your sketch and give it two tags: ccc, lesson4</li>
 
     </ul>
-    <p id ="question">If you have any question about this lesson, send me an email <a href="mailto:riastroes@gmail.com?subject:lesson3">riastroes@gmail.com</a></p>
+    <p id ="question">If you have any question about this lesson, send me an email <a href="mailto:riastroes@gmail.com?subject:lesson4">riastroes@gmail.com</a></p>
 
     <p id ="info1">copyright Ria Stroes  &copy; 2016, www.riastroes.nl</p>
   </body>

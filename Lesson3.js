@@ -23,10 +23,12 @@ function setup(){
   this.layout.addSection(1,15,8,4,6);
   this.layout.addSection(1,15,4,4,6);
   this.layout.addSection(5,15,4,4,6);
-  this.layout.addSection(1,20,8,1,2);
-  this.layout.addSection(1,21,8,4,2);
-  this.layout.addSection(1,26,4,1,2);
-  this.layout.addSection(5,26,4,1,2);
+  this.layout.addSection(5,19,4,1,2);
+  this.layout.addSection(1,20,8,1,1);
+  this.layout.addSection(1,21,8,8,8);
+  this.layout.addSection(1,26,8,1,1);
+  this.layout.addSection(1,27,8,1,1);
+
 
 
   s = this.layout.sections[0];
@@ -83,7 +85,7 @@ function setup(){
   bgContent2.child(content2);
     content2.size(s.width-20, s.height);
     content2.class("content");
-    content2.child(document.getElementById("Yayoi Kusama"));
+    content2.child(document.getElementById("content2"));
 
 
   s = this.layout.sections[4];
@@ -135,31 +137,43 @@ function setup(){
   background(255);
 
   s = this.layout.sections[11];
+  var link = createDiv("");
+  link.position(s.x, s.y);
+  link.size(s.width, s.height/2);
+  link.class("link");
+  link.child(document.getElementById("link1"));
+
+  s = this.layout.sections[12];
   var asstitle = createDiv("ASSIGNMENTS");
   asstitle.position(s.x, s.y+30);
   asstitle.size(s.width, s.height/2);
   asstitle.class("title2");
 
-  s = this.layout.sections[12];
+  s = this.layout.sections[13];
   var ass = createDiv("");
   ass.position(s.x, s.y);
   ass.size(s.width-40, s.height/2);
   ass.class("how");
   ass.child(document.getElementById("assignment1"));
+  ass.child(document.getElementById("assinfo1"));
+  ass.child(document.getElementById("assinfo2"));
 
-  s = this.layout.sections[13];
+
+  s = this.layout.sections[14];
+  var question = createDiv("");
+  question.position(s.x, s.y);
+  question.size(s.width-20, s.height/2);
+  question.class("info");
+  question.child(document.getElementById("question"));
+
+  s = this.layout.sections[15];
   var info = createDiv("");
   info.position(s.x, s.y);
   info.size(s.width, s.height/2);
   info.class("info");
   info.child(document.getElementById("info1"));
 
-  s = this.layout.sections[14];
-  var link = createDiv("");
-  link.position(s.x, s.y);
-  link.size(s.width, s.height/2);
-  link.class("link");
-  link.child(document.getElementById("link1"));
+
 }
 
 function draw(){
