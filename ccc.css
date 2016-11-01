@@ -1,0 +1,123 @@
+body {padding: 0; margin: 0;}
+canvas {vertical-align: top;}
+
+  .bglesson{
+    background:rgb(200,200,200);
+  }
+  .lesson{
+    font-family: 'PhoenixScriptFLF',serif;
+    font-size: 120px;
+    color:rgb(255,255,255);
+  }
+  .subject{
+    font-family: Arial,sans-serif;
+    font-weight:bolder;
+    font-size:120px;
+    text-align:right;
+    color:#0066ff; /*blue*/
+  }
+  .bgnr{
+    background:#0066ff; /*blue*/
+  }
+  .nr{
+    font-family: arial,sans-serif;
+    font-weight:bolder;
+    font-size:400px;
+    text-align:right;
+    color:rgb(255,255,255);
+  }
+  .lnr{
+    font-family: arial,sans-serif;
+    font-weight:bolder;
+    font-size:400px;
+    text-align:right;
+    color:rgb(200,200,200);
+  }
+  .bgimg{
+    z-index:-1;
+  }
+
+  .bgcontent{
+    background:rgb(200,200,200);
+    padding:20px;
+  }
+  .content{
+    font-family: arial,sans-serif;
+    font-size:16px;
+    color: white;
+  }
+  ul{
+    position:relative;
+    left:-30px;
+    top:-20px;
+    color:#0066ff;
+  }
+  ul.white{
+    left:0px;
+    color:#ffffff;
+  }
+  .title{
+    font-family: arial,sans-serif;
+    font-weight:bolder;
+    font-size:140px;
+    color:#0066ff;
+  }
+  .title2{
+    font-family: 'PhoenixScriptFLF',serif;
+    font-weight:bolder;
+    font-size:100px;
+    color:#0066ff;
+  }
+  .how{
+    font-family: arial,sans-serif;
+    background:rgb(200,200,200);
+    padding:20px;
+    font-size:16px;
+    color: white;
+  }
+  .canvastitle{
+    font-family: arial,sans-serif;
+    font-weight:bolder;
+    font-size:140px;
+    color:#0066ff;
+    text-align:right;
+  }
+  .bgcanvas{
+    background:white;
+  }
+  .bgcode{
+    background:white;
+  }
+  canvas{
+    border-right: solid 10px #0066ff;
+  }
+  .question{
+    font-family: arial,sans-serif;
+    font-weight:bolder;
+    font-size:14px;
+    padding-left:20px;
+    background:rgb(200,200,200);
+    color:#0066ff;
+    text-align:center;
+  }
+  .info{
+    font-family: arial,sans-serif;
+    font-weight:bolder;
+    font-size:14px;
+    padding-left:20px;
+    background:rgb(200,200,200);
+    color:#0066ff;
+  }
+  .link{
+    font-family: arial,sans-serif;
+    font-weight:bolder;
+    font-size:14px;
+    text-align:right;
+    padding-right:20px;
+    background:rgb(200,200,200);
+    color:#0066ff;
+  }
+  .imgcenter{
+    margin-left:50%;
+    margin-right:50%;
+  }

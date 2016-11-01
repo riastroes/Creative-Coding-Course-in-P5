@@ -10,20 +10,21 @@
 
 function setup(){
   nr = 1;
-
+  var canvas = createCanvas(0, 0);
   this.layout = new Layout(11,50,2);
   this.layout.addSection(1,1,5,1,1);
   this.layout.addSection(1,3,5,5,5);
   this.layout.addSection(7,1,2,3,3);
   this.layout.addSection(7,5,2,3,3);
   this.layout.addSection(1,8,8,1,1);  //how title
-  this.layout.addSection(1,9,8,4,4);  //how
-  this.layout.addSection(1,14,8,5,5); //img
-  this.layout.addSection(1,19,8,13,12); //how2
-  this.layout.addSection(1,32,8,1,1); //assignment title
-  this.layout.addSection(1,33,8,4,1); //assignments
-  this.layout.addSection(1,36,4,1,1);
-  this.layout.addSection(5,36,4,1,1);
+  this.layout.addSection(1,9,8,3,4);  //how
+  this.layout.addSection(1,13,8,5,5); //img
+  this.layout.addSection(1,18,8,11,12); //how2
+  this.layout.addSection(1,29,8,1,1); //assignment title
+  this.layout.addSection(1,30,8,4,1); //assignments
+  this.layout.addSection(1,33,8,1,1);
+  this.layout.addSection(1,34,4,1,1);
+  this.layout.addSection(5,34,4,1,1);
 
   s = this.layout.sections[0];
   var bgTitle = createDiv("");
@@ -137,14 +138,23 @@ function setup(){
   ass.class("how");
   ass.child(document.getElementById("assignment1"));
 
+
+
   s = this.layout.sections[10];
+  var info = createDiv("");
+  info.position(s.x, s.y);
+  info.size(s.width, s.height/2);
+  info.class("info");
+  info.child(document.getElementById("question"));
+
+  s = this.layout.sections[11];
   var info = createDiv("");
   info.position(s.x, s.y);
   info.size(s.width, s.height/2);
   info.class("info");
   info.child(document.getElementById("info1"));
 
-  s = this.layout.sections[11];
+  s = this.layout.sections[12];
   var link = createDiv("");
   link.position(s.x, s.y);
   link.size(s.width, s.height/2);
