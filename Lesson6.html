@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Creative Coding: Lesson 4</title>
+    <title>Creative Coding: Lesson 6</title>
     <META NAME="COPYRIGHT" CONTENT="&copy; Ria Stroes">
     <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.min.js" type="text/javascript"></script>
@@ -14,7 +14,7 @@
 
     <script src="Layout.js" type="text/javascript"></script>
     <script src="Section.js" type="text/javascript"></script>
-    <script src="Lesson4.js" type="text/javascript"></script>
+    <script src="Lesson6.js" type="text/javascript"></script>
 
     <style>
 
@@ -133,107 +133,101 @@
         background:rgb(200,200,200);
         color:#0066ff;
       }
-
+      .imgcenter{
+        margin-left:50%;
+        margin-right:50%;
+      }
     </style>
   </head>
   <body>
-    <p id="intro1">
-      Lines are wonderful. You can do so much with lines. You can create
-    </p>
-    <ul id="intro2"class="white">
-        <li>Forms, Shapes, Figures</li>
-        <li>Contours</li>
-        <li>Patterns</li>
-        <li>Shading</li>
-        <li>Perspective and space</li>
-        <li>Optical illusions</li>
-    </ul>
-    <p  id="intro3">In this lesson we will look at the straight lines only,
-      but these straight lines are graphically interesting, especially when you start repeating these
-      lines. We can write every line down in the drawing function, but it is much smarter to use a variable.
-    </p>
 
+
+    <p id="intro1">It's time to start talking about color.<br/>
+    How could you do the first five lessons without?<br/>
+    </p>
+  <pre id="intro2" >
+    color( r, g, b);
+  </pre>
+    <p id="intro3">
+    There are several colorsystem available in P5. In the RGB-systems, the different colors are created
+    by mixing light. When you mix red light (r) with green light (g) and blue light (b) you will get white light.
+    The r,g and b can have a value between 0 and 255 and again
+    color(0,0,0) is black and color(255,255,255) is white.</p>
 
     <ul id="content2" >
-      <li>line</li>
-      <li>p5 Reference</li>
+      <li>color</li>
+      <li>RGB-system</li>
+      <li>background</li>
+      <li>fill</li>
+      <li>stroke</li>
+      <li>transparency</li>
+      <li>alpha</li>
+      <li>w3schools.com</li>
     </ul>
     <p id="how1">
-      You can create a straight with the line function.<br/>
-      You always need two points to create a line.<br/>
+      Several functions you already know, can use the same params as the color function:<br/>
     </p>
-    <pre id="how2">
-      line(x, y, x1, y1);
-    </pre>
-    <p id="how3">
-        The line function has four params:
-    </p>
-    <ul id="how4" class="white">
-      <li>the first two params are the begin-position (x,y) of the line</li>
-      <li>the third and the fourth params are the end-position(x1,y1) position of the line.</li>
-    </ul>
-    <p id="how5">
-      Lines needs the same drawing tools as the point.
-      You need a stroke function, so your drawingtool knows which color to use.
-      You need a strokeWeight function, to tell your drawingtool how width your line should be.<br/><br/>
-      The beginning and the end of the line can be set inside or outside the canvas.
-    </p>
-    <p>
-      In the next lesson as we learn more about variables you can start enjoying repeating lines on a smart way.
-      Now you have to draw indidual lines, so make them special.
-    </p>
-    <pre id="code1">
+      <ul  id="how2" class="white">
+        <li>background( 100, 40, 35)</li>
+        <li>fill( 220, 0, 255)</li>
+        <li>stroke( 60, 0, 0)</li>
+      </ul>
+
+      <p  id="how3">In the previous lesson you learned about variables.
+        You can use variables to store your color values.
+        <pre  id="how4">
+        var color1 = color( 255, 0, 0);
+      </pre>
+      <p  id="how5">Now red is stored in the variable color1 and can be used else where.
+        The color values are often set in the setup function and used in the draw function,
+        when you change these values in the setup, all the colors will changes in the drawing.
+
+
+      <pre id="code1">
+  var color1, color2, color3;         //declaration
+
   function setup(){
-    createCanvas(300,300);
+    createCanvas(500,500);
     background(100);
+    color1 = color(0);                //they need a value,
+    color2 = color(180);              //before you can use them.
+    color3 = color(100,0,0);
+
+    frameRate(5);
   }
 
   function draw(){
-    stroke(240);
-    strokeWeight(30);
-    line(85, 130, 200,155);
+    stroke(color3);
+    strokeWeight(3);
+    fill(color2)
+    rect(random(width),random(height),
+         random(50,100),random(10,50));  //you can write
+                                         //a function over two lines.
+    //javascript will ignore the white space.
 
-    stroke(160);
-    strokeWeight(20);
-    line(50, 230, 200,-10);
+    stroke(color3);
+    strokeWeight(5);
+    fill(color1)
+    rect(random(width),random(height),
+         random(10,50),random(50,100));
 
-    stroke(80);
-    strokeWeight(10);
-    line(40, 250, 240,160);
-
-    stroke(0);
-    strokeWeight(1);
-    line(5, 290, 180,200);
-    line(180,200, 100,20);
-    line(100,20,5,290);
   }
     </pre>
-    <p id ="link1"><a href="https://www.openprocessing.org/sketch/386647">open sketch on openprocessing</a></p>
-    <h3 id="assignment1">1. P5 Reference</h3>
-          <ul id ="assinfo1" class="white">
-          <li>Go to the reference op P5 at <a href="http://p5js.org/reference">p5js.org/reference</a></li>
-          <li>Search for the line method</li>
-          <li>You can find every function (or method) back in the Reference.</li>
-          <li>In openprocessing go to the menu on the right side of your screen. Next to the
-            tab Setting you find two more tabs Files and Reference.
-            Click on the Reference tab and click on a functionname in the list.
-            You will find the P5 reference page about this function.</li>
-          <li>Can you find anything about the linecap?</li>
-        </ul>
-    <h3 id="assignment2">2. It's snowing!</h3>
-          <ul id ="assinfo2" class="white">
-            <li>Create a canvas, choise your own size.</li>
-            <li>Use black background</li>
-            <li>Create snowflocks with lines and points.</li>
-            <li>Mail me your most beautiful snowflock.</li>
-          </ul>
-    <h3 id="assignment3">3. Lines</h3>
-      <ul id ="assinfo3" class="white">
-        <li>Create a canvas, choise your own size.</li>
-        <li>Think about the functions of the line and show this in a sketch.</li>
-        <li>See the list at the beginnen of this page.</li>
-        <li>You can publish your sketch on the Facebook <a href="https://www.facebook.com/creativecodingcourse">https://www.facebook.com/creativecodingcourse</a></li>
-      </ul>
+    <p id ="link1"><a href="https://www.openprocessing.org/sketch/387112">open sketch on openprocessing</a></p>
+      <h3 id="assignment1">1. Fireworks</h3>
+      <ul id ="assinfo1" class="white">
+        <li>create a canvas 300 pixels width and 400 pixels height.</li>
+
+        <li>Again this assignment look easy, but first make a sketch on graph paper.
+          It will save you a lot of time.</li>
+        <li>create a sketch in the same size, where 50 pixels is 1 cm.</li>
+        <li>So just a little sketch 6 by 8 cm</li>
+        <li>Use the line and point functions on a black background.</li>
+        <li>Create a colorfull show!</li>
+        <li>BANG! BANG! BOEM!</li>
+        <li>Save your sketch and give it two tags: ccc, lesson4</li>
+
+    </ul>
     <p id ="question">If you have any question about this lesson, send me an email <a href="mailto:riastroes@gmail.com?subject:lesson4">riastroes@gmail.com</a></p>
 
     <p id ="info1">copyright Ria Stroes  &copy; 2016, www.riastroes.nl</p>
