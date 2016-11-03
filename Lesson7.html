@@ -145,14 +145,14 @@
     <p id="intro1">It's time to start talking about color.<br/>
     How could you do the first five lessons without?<br/>
     </p>
-  <pre id="intro2" >
-    color( r, g, b);
-  </pre>
-    <p id="intro3">
-    There are several colorsystem available in P5. In the RGB-systems, the different colors are created
-    by mixing light. When you mix red light (r) with green light (g) and blue light (b) you will get white light.
-    The r,g and b can have a value between 0 and 255 and again
-    color(0,0,0) is black and color(255,255,255) is white.</p>
+    <pre id="intro2" >
+      color( r, g, b);
+    </pre>
+      <p id="intro3">
+      There are several colorsystem available in P5. In the RGB-systems, the different colors are created
+      by mixing light. When you mix red light (r) with green light (g) and blue light (b) you will get white light.
+      The r,g and b can have a value between 0 and 255 and again
+      color(0,0,0) is black and color(255,255,255) is white.</p>
 
     <ul id="content2" >
       <li>color</li>
@@ -197,14 +197,18 @@
   }
 
   function draw(){
+
+    //draw horizontal rectangles
     stroke(color3);
     strokeWeight(3);
-    fill(color2)
-    rect(random(width),random(height),
-         random(50,100),random(10,50));  //you can write
-                                         //a function over two lines.
-    //javascript will ignore the white space.
+    fill(color2);
 
+    //you can write a function over two lines.
+    //javascript will ignore the white space.
+    rect(random(width),random(height),
+         random(50,100),random(10,50));
+
+    //draw vertical rectagles
     stroke(color3);
     strokeWeight(5);
     fill(color1)
